@@ -34,17 +34,32 @@ namespace Atacama.Apenio.NKS.API
         /// <summary>
         /// Die Sprache der Antwort
         /// </summary>
-        public string Language { set { query.Lang = value; } }
+        public string Language { set { query.lang = value; } }
 
         /// <summary>
         /// Der Text, nachdem gesucht werden soll
         /// </summary>
-        public string SearchText { set { query.Text = value; } }
+        public string SearchText { set { query.text = value; } }
+
+        /// <summary>
+        /// Der Textcontext, nachdem gesucht werden soll
+        /// </summary>
+        public string TextContext { set { query.textContext = value; } }
 
         /// <summary>
         /// Die Tiefe, die maximal in der Ontologie gesucht werden soll
         /// </summary>
-        public int SearchDepth { set { query.Depth = value; } }
+        public int SearchDepth { set { query.depth = value; } }
+
+        /// <summary>
+        /// Die Tiefe, die maximal in der Ontologie gesucht werden soll
+        /// </summary>
+        public NksEntry Template { set { query.template = value; } }
+
+        /// <summary>
+        /// Modus in dem Gesucht werden soll
+        /// </summary>
+        public int Mode { set { query.mode = value; } }
 
         /// <summary>
         /// Fügt ein einfaches Konzept über den Namen hinzu
@@ -76,7 +91,7 @@ namespace Atacama.Apenio.NKS.API
         /// <returns>Sich selbst für chaining</returns>
         public QueryBuilder AddTarget(TargetBuilder targetBuilder)
         {
-            query.AddTarget(targetBuilder.create());
+            query.AddTarget(targetBuilder.Create());
             return this;
         }
 
@@ -88,9 +103,9 @@ namespace Atacama.Apenio.NKS.API
 
         private void Validate()
         {
-            foreach (NksEntry entry in query.TargetSet)
+           /* foreach (NksEntry entry in query.TargetSet)
                 if (entry.Structures.Count == 0)
-                    throw new QueryException("As of now, every target of a query needs at least one structure.");
+                    throw new QueryException("As of now, every target of a query needs at least one structure.");*/
         }
     }
 }

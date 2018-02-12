@@ -17,31 +17,17 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
-using NksAPI.Atacama.Apenio.NKS.API.IO;
-using NksAPI.Atacama.Apenio.NKS.API.IO.Net;
-using System.Threading.Tasks;
+using Atacama.Apenio.NKS.API.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace Atacama.Apenio.NKS.API.IO.Net
+namespace NksAPI.Atacama.Apenio.NKS.API
 {
-    internal class RestClient
+    class AttributeBuilder
     {
-        private static readonly RestClient instance = new RestClient();
-        public static RestClient Instance { get { return instance; } }
-
-        private RestClient() { }
-
-        internal async Task<NksResponse> Post(NksQuery query, string url)
-        {
-            NksResponse result = null;
-            result = await HttpUtil.Post(url, query);
-            return result;
-        }
-
-        internal async Task<NksResponse> Get(string url)
-        {
-            NksResponse result = null;
-            result = await HttpUtil.Get(url);
-            return result;
-        }
+        public static string HIGH_AGED_ATTRIBUTE = "HochaltrigeAlter_";
+        public static string MALE_ATTRIBUTE = "HochaltrigeAlter_";
     }
 }
