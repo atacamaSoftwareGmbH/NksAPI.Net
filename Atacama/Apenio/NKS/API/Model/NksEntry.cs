@@ -25,48 +25,50 @@ namespace Atacama.Apenio.NKS.API.Model
 {
     public class NksEntry
     {
-        public string Type { get; set; }
-        public string SuperType { get; set; }
-        public int ListIndex { get; set; }
-        public string Cat { get; set; }
-        public string Dom { get; set; }
-        public string CName { get; set; }
-        public string Label { get; set; }
-        public string Lang { get; set; }
-        public HashSet<string> Warnings { get; set; } = new HashSet<string>();
-        public string EntryValue { get; set; }
-        public string Evidence { get; set; }
-        public string Score { get; set; }
-        public List<string> Abstracts { get; set; } = new List<string>();
-        public string NoxGrade { get; set; }
-        public string HtmlContent { get; set; }
-        public HashSet<string> Structures { get; set; } = new HashSet<string>();
-        public Dictionary<string, HashSet<string>> DataRelation { get; set; } = new Dictionary<string, HashSet<string>>();
-        public Dictionary<string, HashSet<string>> ObjectRelation { get; set; } = new Dictionary<string, HashSet<string>>();
+        public string type { get; set; }
+        public string superType { get; set; }
+        public int listIndex { get; set; }
+        public string cat { get; set; }
+        public string dom { get; set; }
+        public string cName { get; set; }
+        public string label { get; set; }
+        public string lang { get; set; }
+        public HashSet<string> warnings { get; set; } = new HashSet<string>();
+        public string entryValue { get; set; }
+        public string evidence { get; set; }
+        public string score { get; set; }
+        public List<string> abstracts { get; set; } = new List<string>();
+        public string noxGrade { get; set; }
+        public string htmlContent { get; set; }      
+        internal string signature { get; set; }
+        internal string parentSignature { get; set; }
+        public HashSet<string> structures { get; set; } = new HashSet<string>();
+        public Dictionary<string, HashSet<string>> dataRelation { get; set; } = new Dictionary<string, HashSet<string>>();
+        public Dictionary<string, HashSet<string>> objectRelation { get; set; } = new Dictionary<string, HashSet<string>>();
 
         // Protected fields
-        internal HashSet<string> Fields { get; set; }
-        internal HashSet<string> Cores { get; set; }
-        internal Dictionary<NksEntry, double> InterceptedEntries { get; set; }
-        internal HashSet<NksEntry> Entries { get; set; }
-        internal HashSet<NksEntry> Folders { get; set; }
-        internal List<string> Titles { get; set; }
-        internal List<string> Texts { get; set; }
-        internal HashSet<NksEntry> TargetsOfShape { get; set; }
-        internal string CareLevel { get; set; }
-        internal NksEntry SuperTypeEntry { get; set; }
-        internal List<string> MultiLabel { get; set; }
-        internal Dictionary<string, string> LabelMap { get; set; }
+        internal HashSet<string> fields { get; set; }
+        internal HashSet<string> cores { get; set; }
+        internal Dictionary<NksEntry, double> interceptedEntries { get; set; }
+        internal HashSet<NksEntry> entries { get; set; }
+        internal HashSet<NksEntry> folders { get; set; }
+        internal List<string> titles { get; set; }
+        internal List<string> texts { get; set; }
+        internal HashSet<NksEntry> targetsOfShape { get; set; }
+        internal string careLevel { get; set; }
+        internal NksEntry superTypeEntry { get; set; }
+        internal List<string> multiLabel { get; set; }
+        internal Dictionary<string, string> labelMap { get; set; }
 
         [JsonConstructor()]
         internal NksEntry(String cName)
         {
-            CName = cName;
+            this.cName = cName;
         }
 
         internal void AddStructure(string structure)
         {
-            Structures.Add(structure);
+            this.structures.Add(structure);
         }
     }
 }

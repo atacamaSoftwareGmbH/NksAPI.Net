@@ -48,9 +48,27 @@ namespace Atacama.Apenio.NKS.API
             return this;
         }
 
-        internal NksEntry create()
+        internal NksEntry Create()
         {
             return entry;
+        }
+
+        public static TargetBuilder Cause()
+        {
+            var target = new TargetBuilder("UrsacheOrdner");
+            return target;
+        }
+
+        public static TargetBuilder Shape()
+        {
+            var target = new TargetBuilder("PhaenomenOrdner");
+            return target;
+        }
+
+        public static TargetBuilder Intervention()
+        {
+            var target = new TargetBuilder("InterventionOrdner");
+            return target;
         }
     }
 }

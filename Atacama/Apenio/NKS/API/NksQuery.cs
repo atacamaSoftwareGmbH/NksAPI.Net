@@ -30,59 +30,52 @@ namespace Atacama.Apenio.NKS.API
     public class NksQuery
     {
         [JsonProperty()]
-        internal string Lang { get; set; } = "de";
+        internal string lang { get; set; } = "de";
 
         [JsonProperty()]
-        internal int Depth { get; set; } = 0;
+        internal int depth { get; set; } = 0;
 
         [JsonProperty()]
-        internal HashSet<NksEntry> TargetSet { get; set; } = new HashSet<NksEntry>();
+        internal HashSet<NksEntry> targetSet { get; set; } = new HashSet<NksEntry>();
 
         [JsonProperty()]
-        internal HashSet<NksEntry> Attributes { get; set; } = new HashSet<NksEntry>();
+        internal HashSet<NksEntry> attributes { get; set; } = new HashSet<NksEntry>();
 
         [JsonProperty()]
-        internal HashSet<NksEntry> CombinatedConcept { get; set; } = new HashSet<NksEntry>();
+        internal HashSet<NksEntry> combinatedConcept { get; set; } = new HashSet<NksEntry>();
 
         [JsonProperty()]
-        internal string Text { get; set; } = "";
+        internal string text { get; set; } = "";
+    
+        [JsonProperty()]
+        internal NksEntry template { get; set; }
 
         [JsonProperty()]
-        internal string SessionId { get; set; }
+        internal string textContext { get; set; }
+
+      
 
         [JsonProperty()]
-        internal Boolean DoBayes { get; set; } = true;
+        internal string hierarchy { get; set; }
 
         [JsonProperty()]
-        internal NksEntry Template { get; set; }
-
-        [JsonProperty()]
-        internal string TextContext { get; set; }
-
-        [JsonProperty()]
-        internal string MetaContext { get; set; }
-
-        [JsonProperty()]
-        internal string Hierarchy { get; set; }
-
-        [JsonProperty()]
-        internal int Mode { get; set; }
+        internal int mode { get; set; }
 
         internal NksQuery() { }
 
         internal void AddTarget(NksEntry target)
         {
-            TargetSet.Add(target);
+            targetSet.Add(target);
         }
 
         internal void AddAttribute(NksEntry attribute)
         {
-            Attributes.Add(attribute);
+            attributes.Add(attribute);
         }
 
         internal void AddConcept(NksEntry combinatedConcept)
         {
-            CombinatedConcept.Add(combinatedConcept);
+            this.combinatedConcept.Add(combinatedConcept);
         }
     }
 }

@@ -17,34 +17,45 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
-using System.Collections.Specialized;
 using System.Net;
 using System.Text;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Atacama.Apenio.NKS.API;
 
 namespace NksAPI.Atacama.Apenio.NKS.API.IO.Net
 {
     internal static class HttpUtil
     {
-        internal static WebClient client = new WebClient
-        {
-            Proxy = null,
-            Encoding = Encoding.UTF8
-        };
+        internal static HttpClient http = new HttpClient();
+       
 
-        internal static string Post(string url, string data)
+        internal static async Task<NksResponse> Post(string url, NksQuery data)
         {
-            string result = null;
+            NksResponse responseObject = null;
+            http.DefaultRequestHeaders.Clear();
+            http.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-            var values = new NameValueCollection
+            HttpResponseMessage response = await http.PostAsJsonAsync(url, data);
+            if (response.IsSuccessStatusCode)
             {
-                ["data"] = System.Uri.EscapeDataString(data)
-            };
+                responseObject = await response.Content.ReadAsAsync<NksResponse>();
+            }
+            return responseObject;
+        }
 
-            byte[] response = client.UploadValues(url, values);
+        internal static async Task<NksResponse> Get(string url)
+        {
+            NksResponse responseObject = null;
+            http.DefaultRequestHeaders.Clear();
+            http.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-            result = Encoding.UTF8.GetString(response);
-
-            return result;
+            HttpResponseMessage response = await http.GetAsync(url);
+            if (response.IsSuccessStatusCode)
+            {
+                responseObject = await response.Content.ReadAsAsync<NksResponse>();
+            }
+            return responseObject;
         }
     }
 }
