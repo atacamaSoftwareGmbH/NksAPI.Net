@@ -49,7 +49,19 @@ namespace Atacama.Apenio.NKS.API
 
         private const string interventions = "/v2/get/interventions/";
 
+        private const string phenomenons = "/v2/get/phenomenons/";
+
+        private const string shapes = "/v2/get/shapes/";
+
+        private const string causes = "/v2/get/causes/";
+
+        private const string bodylocations = "/v2/get/bodylocations/";
+
+        private const string appliances = "/v2/get/appliances/";
+
         private const string wordProp = "/v2/search/proposal/word";
+
+        private const string proposal = "/v2/search/proposal/";
 
         private const string correlation = "/v2/search/correlation";
 
@@ -90,9 +102,11 @@ namespace Atacama.Apenio.NKS.API
         /// <returns>Ein <see cref="NksResponse"/> mit den Ergebnissen oder Fehlern</returns>
         public async Task<NksResponse> Search(QueryBuilder query) => await Post(query.Create(), search);
 
-        public async Task<NksResponse> CatSearch(QueryBuilder query) => await Post(query.Create(), catSearch);
+        public async Task<NksResponse> Catalog(QueryBuilder query) => await Post(query.Create(), catSearch);
 
         public async Task<NksResponse> WordProposal(QueryBuilder query) => await Post(query.Create(), wordProp);
+
+        public async Task<NksResponse> Proposal(QueryBuilder query) => await Post(query.Create(), proposal);
 
         public async Task<NksResponse> Correlation(QueryBuilder query) => await Post(query.Create(), correlation);
 
@@ -101,6 +115,28 @@ namespace Atacama.Apenio.NKS.API
         public async Task<NksResponse> Link(QueryBuilder query) => await Post(query.Create(), link);
 
         public async Task<NksResponse> Interventions() => await Get(interventions);
+
+        public async Task<NksResponse> Appliances() => await Get(appliances);
+
+        public async Task<NksResponse> Phenomenons() => await Get(phenomenons);
+
+        public async Task<NksResponse> Shapes() => await Get(shapes);
+
+        public async Task<NksResponse> Causes() => await Get(causes);
+
+        public async Task<NksResponse> Bodylocations() => await Get(bodylocations);
+
+        public async Task<NksResponse> Interventions(string str) => await Get(interventions+str);
+
+        public async Task<NksResponse> Appliances(string str) => await Get(appliances + str);
+
+        public async Task<NksResponse> Phenomenons(string str) => await Get(phenomenons + str);
+
+        public async Task<NksResponse> Shapes(string str) => await Get(shapes + str);
+
+        public async Task<NksResponse> Causes(string str) => await Get(causes + str);
+
+        public async Task<NksResponse> Bodylocations(string str) => await Get(bodylocations + str);
 
         internal async Task<NksResponse> Post(NksQuery query, string urlAddition)
         {

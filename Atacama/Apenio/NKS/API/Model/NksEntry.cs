@@ -40,8 +40,8 @@ namespace Atacama.Apenio.NKS.API.Model
         public List<string> abstracts { get; set; } = new List<string>();
         public string noxGrade { get; set; }
         public string htmlContent { get; set; }      
-        internal string signature { get; set; }
-        internal string parentSignature { get; set; }
+        public string signature { get; set; }
+        public string parentSignature { get; set; }
         public HashSet<string> structures { get; set; } = new HashSet<string>();
         public Dictionary<string, HashSet<string>> dataRelation { get; set; } = new Dictionary<string, HashSet<string>>();
         public Dictionary<string, HashSet<string>> objectRelation { get; set; } = new Dictionary<string, HashSet<string>>();
