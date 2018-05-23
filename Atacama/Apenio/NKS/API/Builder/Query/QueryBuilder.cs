@@ -17,49 +17,60 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 /// SOFTWARE.
+
+using System;
 using Atacama.Apenio.NKS.API.Model;
-using Atacama.Apenio.NKS.API.Error;
+using NksAPI.Atacama.Apenio.NKS.API.Builder.Rest;
+using Type = NksAPI.Atacama.Apenio.NKS.API.Builder.Rest.Type;
 
 namespace Atacama.Apenio.NKS.API
 {
     /// <summary>
     /// Erleichtert das Erstellen einer Anfrage an den NKS
     /// </summary>
-    public class QueryBuilder
+    public class QueryBuilder : Executor
     {
-        private NksQuery query = new NksQuery();
+        //private NksQuery query = new NksQuery();
 
-        public QueryBuilder() { }
+        public QueryBuilder()
+        {
+            Query = new NksQuery();
+        }
+
+        public QueryBuilder(Type type, string path) : base(type, path)
+        {
+            Query = new NksQuery();
+        }
 
         /// <summary>
         /// Die Sprache der Antwort
         /// </summary>
-        public string Language { set { query.lang = value; } }
+        public string Language { set => Query.lang = value; }
 
         /// <summary>
         /// Der Text, nachdem gesucht werden soll
         /// </summary>
-        public string SearchText { set { query.text = value; } }
+        public string SearchText { set => Query.text = value; }
 
         /// <summary>
         /// Der Textcontext, nachdem gesucht werden soll
         /// </summary>
-        public string TextContext { set { query.textContext = value; } }
+        public string TextContext { set => Query.textContext = value; }
 
         /// <summary>
         /// Die Tiefe, die maximal in der Ontologie gesucht werden soll
         /// </summary>
-        public int SearchDepth { set { query.depth = value; } }
+        public int SearchDepth { set => Query.depth = value; }
 
         /// <summary>
         /// Die Tiefe, die maximal in der Ontologie gesucht werden soll
         /// </summary>
-        public NksEntry Template { set { query.template = value; } }
+        public NksEntry Template { set => Query. template = value; }
 
         /// <summary>
         /// Modus in dem Gesucht werden soll
         /// </summary>
-        public int Mode { set { query.mode = value; } }
+        public int Mode { set => Query.mode = value; }
 
         /// <summary>
         /// Fügt ein einfaches Konzept über den Namen hinzu
@@ -68,7 +79,14 @@ namespace Atacama.Apenio.NKS.API
         /// <returns>Sich selbst für chaining</returns>
         public QueryBuilder AddSimpleConcept(string conceptName)
         {
-            query.AddConcept(new NksEntry(conceptName));
+            Query.AddConcept(new NksEntry(conceptName));
+            return this;
+        }
+
+        public QueryBuilder SetLanguage(string str)
+        {
+            Language = str;
+            Console.Out.WriteLine(Query.lang);
             return this;
         }
 
@@ -80,7 +98,7 @@ namespace Atacama.Apenio.NKS.API
         /// <returns>Sich selbst für chaining</returns>
         public QueryBuilder AddAttribute(string conceptName)
         {
-            query.AddAttribute(new NksEntry(conceptName));
+            Query.AddAttribute(new NksEntry(conceptName));
             return this;
         }
 
@@ -91,14 +109,8 @@ namespace Atacama.Apenio.NKS.API
         /// <returns>Sich selbst für chaining</returns>
         public QueryBuilder AddTarget(TargetBuilder targetBuilder)
         {
-            query.AddTarget(targetBuilder.Create());
+            Query.AddTarget(targetBuilder.Create());
             return this;
-        }
-
-        internal NksQuery Create()
-        {
-            Validate();
-            return query;
         }
 
         private void Validate()

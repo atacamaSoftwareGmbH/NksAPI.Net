@@ -21,6 +21,7 @@ using Atacama.Apenio.NKS.API.Error;
 using Atacama.Apenio.NKS.API.IO.Net;
 using System;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Atacama.Apenio.NKS.API
 {
@@ -41,34 +42,80 @@ namespace Atacama.Apenio.NKS.API
     /// Die Methodem können außerdem Ausnahmen des Typs RuntimeException werfen.
     /// Diese sollten für korrekte Fehlerbehandlung gefangen werden. 
     /// </remarks>
-    public class NksRequest
+    public struct NksRestAttributes
     {
+        [Obsolete] 
         private const string search = "/search";
 
-        private const string catSearch = "/v2/search/catalog";
+        //Remote
+        public const string publicServer = "http://nks.atacama.de";
 
-        private const string interventions = "/v2/get/interventions/";
+        public const string servicePath = "/NksService/rest";
 
-        private const string phenomenons = "/v2/get/phenomenons/";
+        //V2
+        public const string v2 = "/v2";
 
-        private const string shapes = "/v2/get/shapes/";
+        //Get
 
-        private const string causes = "/v2/get/causes/";
+        public const string get = "/get";
 
-        private const string bodylocations = "/v2/get/bodylocations/";
+        public const string tree = "/tree";
 
-        private const string appliances = "/v2/get/appliances/";
+        public const string interventions = "/interventions";
 
-        private const string wordProp = "/v2/search/proposal/word";
+        public const string shapes = "/shapes";
 
-        private const string proposal = "/v2/search/proposal/";
+        public const string phenomenons = "/phenomenons";
 
-        private const string correlation = "/v2/search/correlation";
+        public const string bodylocations = "/bodylocations";
 
-        private const string chain = "/v2/search/chain";
+        public const string causes = "/causes";
 
-        private const string link = "/v2/search/link";
+        public const string appliances = "/appliances";
+        
+        //private const string interventions = "/v2/get/interventions/";
 
+        //Search
+
+        public const string Search = "/search";
+        
+        
+        public const string Ahi = "/ahi";
+
+        public const string Correlation = "/correlation";
+
+        public const string Catalog = "/catalog";
+
+        public const string Chain = "/chain";
+
+        public const string Link = "/link";
+
+        public const string Prop = "/proposal";
+
+        public const string WordProp = "/proposal/word";
+
+        //access
+        public const string access = "/access";
+
+        public const string element = "/element";
+        private const string elementAccess = "/v2/access/element";
+
+        //inference
+        
+        public const string Inference = "/inference";
+        
+        public const string PInference = "/p";
+       
+        public const string CInference = "/c";
+
+        //LongTerm
+        public const string LongTerm = "/lt";
+        
+        public const string Risk = "/risk";
+
+        public const string InterventionProposal = "/ltci";
+
+/*
 
         /// <summary>
         /// Die valide URL zu einem NKS Server
@@ -100,13 +147,12 @@ namespace Atacama.Apenio.NKS.API
         /// </remarks>
         /// <param name="query">Eine Query über die <see cref="QueryBuilder"/> Klasse</param>
         /// <returns>Ein <see cref="NksResponse"/> mit den Ergebnissen oder Fehlern</returns>
+        [Obsolete]
         public async Task<NksResponse> Search(QueryBuilder query) => await Post(query.Create(), search);
 
-        public async Task<NksResponse> Catalog(QueryBuilder query) => await Post(query.Create(), catSearch);
+        public async Task<NksResponse> CatSearch(QueryBuilder query) => await Post(query.Create(), catSearch);
 
         public async Task<NksResponse> WordProposal(QueryBuilder query) => await Post(query.Create(), wordProp);
-
-        public async Task<NksResponse> Proposal(QueryBuilder query) => await Post(query.Create(), proposal);
 
         public async Task<NksResponse> Correlation(QueryBuilder query) => await Post(query.Create(), correlation);
 
@@ -115,28 +161,6 @@ namespace Atacama.Apenio.NKS.API
         public async Task<NksResponse> Link(QueryBuilder query) => await Post(query.Create(), link);
 
         public async Task<NksResponse> Interventions() => await Get(interventions);
-
-        public async Task<NksResponse> Appliances() => await Get(appliances);
-
-        public async Task<NksResponse> Phenomenons() => await Get(phenomenons);
-
-        public async Task<NksResponse> Shapes() => await Get(shapes);
-
-        public async Task<NksResponse> Causes() => await Get(causes);
-
-        public async Task<NksResponse> Bodylocations() => await Get(bodylocations);
-
-        public async Task<NksResponse> Interventions(string str) => await Get(interventions+str);
-
-        public async Task<NksResponse> Appliances(string str) => await Get(appliances + str);
-
-        public async Task<NksResponse> Phenomenons(string str) => await Get(phenomenons + str);
-
-        public async Task<NksResponse> Shapes(string str) => await Get(shapes + str);
-
-        public async Task<NksResponse> Causes(string str) => await Get(causes + str);
-
-        public async Task<NksResponse> Bodylocations(string str) => await Get(bodylocations + str);
 
         internal async Task<NksResponse> Post(NksQuery query, string urlAddition)
         {
@@ -150,6 +174,6 @@ namespace Atacama.Apenio.NKS.API
             if (String.IsNullOrWhiteSpace(Url) || !Url.EndsWith("rest"))
                 throw new NksException("Please define the URL to the NKS in this scheme   http://[Adresse]:[Port]/[Projektname]/rest");
             return await RestClient.Instance.Get(Url + urlAddition);
-        }
+        }*/
     }
 }
