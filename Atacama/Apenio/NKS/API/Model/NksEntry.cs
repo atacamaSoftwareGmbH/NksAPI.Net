@@ -33,18 +33,21 @@ namespace Atacama.Apenio.NKS.API.Model
         public string cName { get; set; }
         public string label { get; set; }
         public string lang { get; set; }
-        public HashSet<string> warnings { get; set; } = new HashSet<string>();
+        public HashSet<string> warnings { get; set; }
         public string entryValue { get; set; }
         public string evidence { get; set; }
         public string score { get; set; }
-        public List<string> abstracts { get; set; } = new List<string>();
+        public List<string> abstracts { get; set; }
         public string noxGrade { get; set; }
         public string htmlContent { get; set; }      
-        public string signature { get; set; }
-        public string parentSignature { get; set; }
-        public HashSet<string> structures { get; set; } = new HashSet<string>();
-        public Dictionary<string, HashSet<string>> dataRelation { get; set; } = new Dictionary<string, HashSet<string>>();
-        public Dictionary<string, HashSet<string>> objectRelation { get; set; } = new Dictionary<string, HashSet<string>>();
+        internal string signature { get; set; }
+        internal string parentSignature { get; set; }
+        public HashSet<string> structures { get; set; }
+        public Dictionary<string, HashSet<string>> dataRelation { get; set; }
+        public Dictionary<string, HashSet<string>> objectRelation { get; set; }
+        public Dictionary<int, HashSet<string>> shapes { get; set; }
+        public String[] shapeLabel { get; set; }
+        
 
         // Protected fields
         internal HashSet<string> fields { get; set; }
@@ -68,7 +71,11 @@ namespace Atacama.Apenio.NKS.API.Model
 
         internal void AddStructure(string structure)
         {
-            this.structures.Add(structure);
+            if (structures == null)
+            {
+                structures = new HashSet<string>();
+            }
+            structures?.Add(structure);
         }
     }
 }

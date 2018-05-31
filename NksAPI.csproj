@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{98EE6213-00AF-4058-956A-08BFE5C4416B}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NksAPI</RootNamespace>
     <AssemblyName>NksAPI</AssemblyName>
@@ -51,21 +51,44 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Atacama\Apenio\NKS\API\AttributeBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Nks.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Queries.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\QueryBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\AttributeBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\BasicEntries.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\DataRelations.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\Language.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\OrderBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\SimpleEntryBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\SimpleQueryBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\SimpleTargetBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\SimpleTemplateBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\TargetBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\TemplateBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\Access\AccessBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\Executor.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\Get\UidBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\Get\GetBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\Get\TargetSetBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\Inference\InferenceBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\LongTerm\LongTermBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\NksRestAttributes.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\RestRequestBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\Search\SearchBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\Type.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Example.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\IO\Net\HttpUtil.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\IO\NksJson.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Model\NksEntry.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Error\NksException.cs" />
-    <Compile Include="Atacama\Apenio\NKS\API\NksQuery.cs" />
-    <Compile Include="Atacama\Apenio\NKS\API\NksRequest.cs" />
-    <Compile Include="Atacama\Apenio\NKS\API\NksResponse.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Model\NksQuery.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Error\QueryException.cs" />
-    <Compile Include="Atacama\Apenio\NKS\API\TemplateBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Model\NksResponse.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Test\Access\AccessTests.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Workflow\AssessmentExampleFlowTest.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Workflow\ExpertExampleFlowTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Atacama\Apenio\NKS\API\QueryBuilder.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\IO\Net\RestClient.cs" />
-    <Compile Include="Atacama\Apenio\NKS\API\TargetBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

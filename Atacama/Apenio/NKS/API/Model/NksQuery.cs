@@ -29,31 +29,33 @@ namespace Atacama.Apenio.NKS.API
     /// </summary>
     public class NksQuery
     {
+        
         [JsonProperty()]
-        internal string lang { get; set; } = "de";
+        internal string order { get; set; }
 
         [JsonProperty()]
-        internal int depth { get; set; } = 0;
+        internal string lang { get; set; }
 
         [JsonProperty()]
-        internal HashSet<NksEntry> targetSet { get; set; } = new HashSet<NksEntry>();
+        internal int depth { get; set; }
 
         [JsonProperty()]
-        internal HashSet<NksEntry> attributes { get; set; } = new HashSet<NksEntry>();
+        internal HashSet<NksEntry> targetSet { get; set; }
 
         [JsonProperty()]
-        internal HashSet<NksEntry> combinatedConcept { get; set; } = new HashSet<NksEntry>();
+        internal HashSet<NksEntry> attributes { get; set; }
 
         [JsonProperty()]
-        internal string text { get; set; } = "";
+        internal HashSet<NksEntry> combinatedConcept { get; set; }
+
+        [JsonProperty()]
+        internal string text { get; set; }
     
         [JsonProperty()]
         internal NksEntry template { get; set; }
 
         [JsonProperty()]
         internal string textContext { get; set; }
-
-      
 
         [JsonProperty()]
         internal string hierarchy { get; set; }
@@ -65,16 +67,28 @@ namespace Atacama.Apenio.NKS.API
 
         internal void AddTarget(NksEntry target)
         {
+            if (targetSet == null)
+            {
+                targetSet = new HashSet<NksEntry>();
+            }
             targetSet.Add(target);
         }
 
         internal void AddAttribute(NksEntry attribute)
         {
+            if (attributes == null)
+            {
+                attributes = new HashSet<NksEntry>();
+            }
             attributes.Add(attribute);
         }
 
         internal void AddConcept(NksEntry combinatedConcept)
         {
+            if (this.combinatedConcept == null)
+            {
+                this.combinatedConcept = new HashSet<NksEntry>();
+            }
             this.combinatedConcept.Add(combinatedConcept);
         }
     }
