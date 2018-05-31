@@ -11,12 +11,17 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Builder.Rest.LongTerm
             this.path = path;
             this.path += NksRestAttributes.LongTerm;
         }
-
+        /// <summary>
+        /// Risikoanalyse
+        /// </summary>
         public Queries Risk()
         {
             return new Queries(Type.POST,path+NksRestAttributes.Risk);
         }
         
+        /// <summary>
+        /// Interventionsvorschläge
+        /// </summary>
         public Queries Intervention()
         {
             return new Queries(Type.POST,path+NksRestAttributes.InterventionProposal);

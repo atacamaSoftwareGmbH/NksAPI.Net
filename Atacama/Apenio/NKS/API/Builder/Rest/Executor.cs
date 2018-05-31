@@ -24,11 +24,17 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Builder.Rest
             
         }
 
+        /// <summary>
+        /// Gebe das gebaute Queryobjekt zurück
+        /// </summary>
         public NksQuery GetQuery()
         {
             return Query;
         }
 
+        /// <summary>
+        /// Führe Anfrage an den Server durch
+        /// </summary>
         public async Task<NksResponse> Execute()
         {    
             switch (Type)

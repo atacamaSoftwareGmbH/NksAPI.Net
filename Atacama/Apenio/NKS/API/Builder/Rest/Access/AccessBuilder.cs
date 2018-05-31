@@ -11,6 +11,9 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Builder.Rest.Access
             _path += path + NksRestAttributes.access;
         }
 
+        /// <summary>
+        /// Zugriff auf die Kataloge
+        /// </summary>
         public Queries Element()
         {
             return new Queries(Type.POST,_path + NksRestAttributes.element);

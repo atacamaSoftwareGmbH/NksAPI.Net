@@ -15,6 +15,11 @@ namespace Atacama.Apenio.NKS.API
             _builder = builder;
         }
         
+        /// <summary>
+        /// Füge Root der Zielmenge hinzu
+        /// 
+        /// </summary>
+        /// <returns>EntryBuilder um gegebenenfalls Strukturelemente dem Ziel hinzuzufügen</returns>
         public SimpleEntryBuilder<SimpleTargetBuilder> Root()
         {
             NksEntry entry = new NksEntry(BasicEntries.Root);
@@ -22,6 +27,11 @@ namespace Atacama.Apenio.NKS.API
             return new SimpleEntryBuilder<SimpleTargetBuilder>(entry,this);
         }
         
+        /// <summary>
+        /// Füge den Expertenstandard der Zielmenge hinzu
+        /// 
+        /// </summary>
+        /// <returns>EntryBuilder um gegebenenfalls Strukturelemente dem Ziel hinzuzufügen</returns>
         public SimpleEntryBuilder<SimpleTargetBuilder> ExpertStandard()
         {
             NksEntry entry = new NksEntry(BasicEntries.ExpertStandard);
@@ -29,6 +39,11 @@ namespace Atacama.Apenio.NKS.API
             return new SimpleEntryBuilder<SimpleTargetBuilder>(entry,this);
         }
         
+        /// <summary>
+        /// Füge Interventionen der Zielmenge hinzu
+        /// 
+        /// </summary>
+        /// <returns>EntryBuilder um gegebenenfalls Strukturelemente dem Ziel hinzuzufügen</returns>
         public SimpleEntryBuilder<SimpleTargetBuilder> Interventions()
         {
             NksEntry entry = new NksEntry(BasicEntries.Interventions);
@@ -36,6 +51,11 @@ namespace Atacama.Apenio.NKS.API
             return new SimpleEntryBuilder<SimpleTargetBuilder>(entry,this);
         }
         
+        /// <summary>
+        /// Füge Ordnungsstuktur der Interventionen der Zielmenge hinzu
+        /// 
+        /// </summary>
+        /// <returns>EntryBuilder um gegebenenfalls Strukturelemente dem Ziel hinzuzufügen</returns>
         public SimpleEntryBuilder<SimpleTargetBuilder> InterventionsStructure()
         {
             NksEntry entry = new NksEntry(BasicEntries.InterventionsStructure);
@@ -43,6 +63,11 @@ namespace Atacama.Apenio.NKS.API
             return new SimpleEntryBuilder<SimpleTargetBuilder>(entry,this);
         }
         
+        /// <summary>
+        /// Füge Ausprägungen der Zielmenge hinzu
+        /// 
+        /// </summary>
+        /// <returns>EntryBuilder um gegebenenfalls Strukturelemente dem Ziel hinzuzufügen</returns>
         public SimpleEntryBuilder<SimpleTargetBuilder> Shapes()
         {
             NksEntry entry = new NksEntry(BasicEntries.Shapes);
@@ -50,6 +75,11 @@ namespace Atacama.Apenio.NKS.API
             return new SimpleEntryBuilder<SimpleTargetBuilder>(entry,this);
         }
         
+        /// <summary>
+        /// Füge Phänomene der Zielmenge hinzu
+        /// 
+        /// </summary>
+        /// <returns>EntryBuilder um gegebenenfalls Strukturelemente dem Ziel hinzuzufügen</returns>
         public SimpleEntryBuilder<SimpleTargetBuilder> Phenomenons()
         {
             NksEntry entry = new NksEntry(BasicEntries.Phaenomenoms);
@@ -57,6 +87,11 @@ namespace Atacama.Apenio.NKS.API
             return new SimpleEntryBuilder<SimpleTargetBuilder>(entry,this);
         }
         
+        /// <summary>
+        /// Füge Körperorte der Zielmenge hinzu
+        /// 
+        /// </summary>
+        /// <returns>EntryBuilder um gegebenenfalls Strukturelemente dem Ziel hinzuzufügen</returns>
         public SimpleEntryBuilder<SimpleTargetBuilder> BodyLocations()
         {
             NksEntry entry = new NksEntry(BasicEntries.BodyLocations);
@@ -64,6 +99,11 @@ namespace Atacama.Apenio.NKS.API
             return new SimpleEntryBuilder<SimpleTargetBuilder>(entry,this);
         }
         
+        /// <summary>
+        /// Füge Ordnungsstuktur der Körperorte der Zielmenge hinzu
+        /// 
+        /// </summary>
+        /// <returns>EntryBuilder um gegebenenfalls Strukturelemente dem Ziel hinzuzufügen</returns>
         public SimpleEntryBuilder<SimpleTargetBuilder> BodyLocationsStructure()
         {
             NksEntry entry = new NksEntry(BasicEntries.BodyLocationsStructure);
@@ -71,6 +111,11 @@ namespace Atacama.Apenio.NKS.API
             return new SimpleEntryBuilder<SimpleTargetBuilder>(entry,this);
         }
         
+        /// <summary>
+        /// Füge Hilfsmittel der Zielmenge hinzu
+        /// 
+        /// </summary>
+        /// <returns>EntryBuilder um gegebenenfalls Strukturelemente dem Ziel hinzuzufügen</returns>
         public SimpleEntryBuilder<SimpleTargetBuilder> Appliances()
         {
             NksEntry entry = new NksEntry(BasicEntries.Appliances);
@@ -78,6 +123,11 @@ namespace Atacama.Apenio.NKS.API
             return new SimpleEntryBuilder<SimpleTargetBuilder>(entry,this);
         }
         
+        /// <summary>
+        /// Füge Ordnungsstuktur der Hilfsmittel der Zielmenge hinzu
+        /// 
+        /// </summary>
+        /// <returns>EntryBuilder um gegebenenfalls Strukturelemente dem Ziel hinzuzufügen</returns>
         public SimpleEntryBuilder<SimpleTargetBuilder> AppliancesStructure()
         {
             NksEntry entry = new NksEntry(BasicEntries.AppliancesStructure);
@@ -85,6 +135,11 @@ namespace Atacama.Apenio.NKS.API
             return new SimpleEntryBuilder<SimpleTargetBuilder>(entry,this);
         }
         
+        /// <summary>
+        /// Füge Ursachen der Zielmenge hinzu
+        /// 
+        /// </summary>
+        /// <returns>EntryBuilder um gegebenenfalls Strukturelemente dem Ziel hinzuzufügen</returns>
         public SimpleEntryBuilder<SimpleTargetBuilder> Causes()
         {
             NksEntry entry = new NksEntry(BasicEntries.Causes);
@@ -92,6 +147,11 @@ namespace Atacama.Apenio.NKS.API
             return new SimpleEntryBuilder<SimpleTargetBuilder>(entry,this);
         }
         
+        /// <summary>
+        /// Füge Ordnungsstuktur der Ursachen der Zielmenge hinzu
+        /// 
+        /// </summary>
+        /// <returns>EntryBuilder um gegebenenfalls Strukturelemente dem Ziel hinzuzufügen</returns>
         public SimpleEntryBuilder<SimpleTargetBuilder> CausesStructure()
         {
             NksEntry entry = new NksEntry(BasicEntries.CausesStructure);
@@ -99,13 +159,24 @@ namespace Atacama.Apenio.NKS.API
             return new SimpleEntryBuilder<SimpleTargetBuilder>(entry,this);
         }
 
-        public SimpleEntryBuilder<SimpleTargetBuilder> Custom(string str)
+        /// <summary>
+        /// Füge Element mittels seines Konzeptnamens der Zielmenge hinzu
+        /// 
+        /// </summary>
+        /// <param name="cName">der cName oder auch Konzeptname</param> 
+        /// <returns>EntryBuilder um gegebenenfalls Strukturelemente dem Ziel hinzuzufügen</returns>
+        public SimpleEntryBuilder<SimpleTargetBuilder> Custom(string cName)
         {
-            NksEntry entry = new NksEntry(str);
+            NksEntry entry = new NksEntry(cName);
             _query.AddTarget(entry);
             return new SimpleEntryBuilder<SimpleTargetBuilder>(entry,this);
         }
         
+        /// <summary>
+        /// Beende das hinzufügen von Elementen zur Zielmenge
+        /// 
+        /// </summary>
+        /// <returns>EntryBuilder um gegebenenfalls Strukturelemente dem Ziel hinzuzufügen</returns>
         public SimpleQueryBuilder Done()
         {
             return _builder;

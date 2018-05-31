@@ -14,11 +14,16 @@ namespace Atacama.Apenio.NKS.API
             _path = path;
         }
 
+        /// <summary>
+        /// Erstellen eines komplexen Query-Objekts mittels builder
+        /// </summary>
         public QueryBuilder CreateQuery()
         {
             return new QueryBuilder(_type,_path);
         }
-
+        /// <summary>
+        /// Erstellen eines komplexen Query-Objekts mittels vereinfachten Builders
+        /// </summary>
         public SimpleQueryBuilder CreateSimpleQuery()
         {
             return new SimpleQueryBuilder(_type,_path);

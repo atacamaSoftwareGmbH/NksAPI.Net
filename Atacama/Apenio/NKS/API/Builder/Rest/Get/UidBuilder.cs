@@ -8,9 +8,20 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Builder.Rest.Get
         {   
         }
         
+        /// <summary>
+        /// Erhalte Antwort als Baum
+        /// </summary>
         public Executor Tree()
         {
             return new Executor(Type.GET,Path + NksRestAttributes.tree);
+        }
+        
+        /// <summary>
+        /// Erhalte Antwort als Liste
+        /// </summary>
+        public Executor List()
+        {
+            return new Executor(Type.GET,Path + NksRestAttributes.list);
         }
     }
 }
