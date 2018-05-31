@@ -20,17 +20,26 @@ namespace Atacama.Apenio.NKS.API
             this.path += NksRestAttributes.servicePath;
         }
 
+       
+        /// <summary>
+        /// Nksverbindung zum öffentlichen Server
+        /// </summary>
         public static Nks NewConnection()
         {
             return new Nks();
         }
 
+        /// <summary>
+        /// Nksverbindung zu einem bestimmten Server
+        /// </summary>
         public static Nks NewConnection(string serverAddress)
         {
             return new Nks(serverAddress);
         }
 
-
+        /// <summary>
+        /// Bereitet Anfrage an den NKS vor
+        /// </summary>
         public RestRequestBuilder PrepareRequest()
         {
             return new RestRequestBuilder(this.path);

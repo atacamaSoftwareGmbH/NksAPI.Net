@@ -60,6 +60,8 @@ namespace Atacama.Apenio.NKS.API
         public const string get = "/get";
 
         public const string tree = "/tree";
+        
+        public const string list = "/list";
 
         public const string interventions = "/interventions";
 
