@@ -71,6 +71,11 @@ namespace Atacama.Apenio.NKS.API
         /// Modus in dem Gesucht werden soll
         /// </summary>
         public int Mode { set => Query.mode = value; }
+        
+        /// <summary>
+        /// Modus in dem Gesucht werden soll
+        /// </summary>
+        public string Order { set => Query.order = value; }
 
         /// <summary>
         /// Fügt ein einfaches Konzept über den Namen hinzu
@@ -86,7 +91,6 @@ namespace Atacama.Apenio.NKS.API
         public QueryBuilder SetLanguage(string str)
         {
             Language = str;
-            Console.Out.WriteLine(Query.lang);
             return this;
         }
 

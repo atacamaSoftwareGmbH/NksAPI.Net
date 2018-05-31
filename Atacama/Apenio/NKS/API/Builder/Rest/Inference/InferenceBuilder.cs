@@ -12,14 +12,14 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Builder.Rest.Inference
             this.path += NksRestAttributes.Inference;
         }
 
-        public QueryBuilder Probabilities()
+        public Queries Probabilities()
         {
-            return new QueryBuilder(Type.POST,path+NksRestAttributes.PInference);
+            return new Queries(Type.POST,path+NksRestAttributes.PInference);
         }
         
-        public QueryBuilder Contradictions()
+        public Queries Contradictions()
         {
-            return new QueryBuilder(Type.POST,path+NksRestAttributes.CInference);
+            return new Queries(Type.POST,path+NksRestAttributes.CInference);
         }
     }
 }

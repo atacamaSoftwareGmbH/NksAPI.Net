@@ -4,17 +4,16 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Builder.Rest.Access
 {
     public class AccessBuilder
     {
-        private string path;
+        private readonly string _path;
 
         internal AccessBuilder(string path)
         {
-            this.path = this.path;
-            this.path += NksRestAttributes.access;
+            _path += path + NksRestAttributes.access;
         }
 
-        public QueryBuilder Element()
+        public Queries Element()
         {
-            return new QueryBuilder(Type.POST,path + NksRestAttributes.element);
+            return new Queries(Type.POST,_path + NksRestAttributes.element);
         }
     }
 }

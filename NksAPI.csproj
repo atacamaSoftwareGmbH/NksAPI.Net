@@ -52,9 +52,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Atacama\Apenio\NKS\API\Builder\Nks.cs" />
-    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\AttributeBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Queries.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\QueryBuilder.cs" />
-    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\SimpleQueryBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\AttributeBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\BasicEntries.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\DataRelations.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\Language.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\OrderBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\SimpleEntryBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\SimpleQueryBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\SimpleTargetBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\Simple\SimpleTemplateBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\TargetBuilder.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Builder\Query\TemplateBuilder.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\Access\AccessBuilder.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\Executor.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\Get\UidBuilder.cs" />
@@ -66,8 +76,6 @@
     <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\RestRequestBuilder.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\Search\SearchBuilder.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Builder\Rest\Type.cs" />
-    <Compile Include="Atacama\Apenio\NKS\API\Builder\TargetBuilder.cs" />
-    <Compile Include="Atacama\Apenio\NKS\API\Builder\TemplateBuilder.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Example.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\IO\Net\HttpUtil.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\IO\NksJson.cs" />
@@ -76,15 +84,15 @@
     <Compile Include="Atacama\Apenio\NKS\API\Model\NksQuery.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Error\QueryException.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Model\NksResponse.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Test\Access\AccessTests.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Workflow\AssessmentExampleFlowTest.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Workflow\ExpertExampleFlowTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\IO\Net\RestClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Atacama\Apenio\NKS\API\Test\Access" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

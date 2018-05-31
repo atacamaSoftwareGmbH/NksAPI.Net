@@ -12,14 +12,14 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Builder.Rest.LongTerm
             this.path += NksRestAttributes.LongTerm;
         }
 
-        public QueryBuilder Risk()
+        public Queries Risk()
         {
-            return new QueryBuilder(Type.POST,path+NksRestAttributes.Risk);
+            return new Queries(Type.POST,path+NksRestAttributes.Risk);
         }
         
-        public QueryBuilder Intervention()
+        public Queries Intervention()
         {
-            return new QueryBuilder(Type.POST,path+NksRestAttributes.InterventionProposal);
+            return new Queries(Type.POST,path+NksRestAttributes.InterventionProposal);
         }
     }
 }

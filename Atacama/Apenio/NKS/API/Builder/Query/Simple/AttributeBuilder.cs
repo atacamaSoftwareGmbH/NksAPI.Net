@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
 using Atacama.Apenio.NKS.API.Model;
 
 namespace Atacama.Apenio.NKS.API
@@ -81,6 +82,12 @@ namespace Atacama.Apenio.NKS.API
         public AttributeBuilder Female()
         {
             AddAttribute(FemaleAttr);
+            return this;
+        }
+
+        public AttributeBuilder Custum(string str)
+        {
+            AddAttribute(str);
             return this;
         }
 

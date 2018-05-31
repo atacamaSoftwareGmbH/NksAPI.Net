@@ -4,7 +4,7 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Builder.Rest.Search
 {
     public class SearchBuilder
     {
-        private string _path;
+        private readonly string _path;
 
         public SearchBuilder(string path)
         {
@@ -12,40 +12,40 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Builder.Rest.Search
             _path += NksRestAttributes.Search;
         }
 
-        public QueryBuilder AdHocIntervention()
+        public Queries AdHocIntervention()
         {
-            return new QueryBuilder(Type.POST,_path+NksRestAttributes.Ahi);
+            return new Queries(Type.POST,_path+NksRestAttributes.Ahi);
         }
         
-        public QueryBuilder Correlation()
+        public Queries Correlation()
         {
-            return new QueryBuilder(Type.POST,_path+NksRestAttributes.Correlation);
+            return new Queries(Type.POST,_path+NksRestAttributes.Correlation);
         }
         
-        public QueryBuilder Catalog()
+        public Queries Catalog()
         {
-            return new QueryBuilder(Type.POST,_path+NksRestAttributes.Catalog);
+            return new Queries(Type.POST,_path+NksRestAttributes.Catalog);
         }
         
-        public QueryBuilder Chain()
+        public Queries Chain()
         {
-            return new QueryBuilder(Type.POST,_path+NksRestAttributes.Chain);
+            return new Queries(Type.POST,_path+NksRestAttributes.Chain);
         }
         
-        public QueryBuilder Link()
+        public Queries Link()
         {
-            return new QueryBuilder(Type.POST,_path+NksRestAttributes.Link);
+            return new Queries(Type.POST,_path+NksRestAttributes.Link);
         }
         
         
-        public QueryBuilder Proposal()
+        public Queries Proposal()
         {
-            return new QueryBuilder(Type.POST,_path+NksRestAttributes.Prop);
+            return new Queries(Type.POST,_path+NksRestAttributes.Prop);
         }
         
-        public QueryBuilder WordProposal()
+        public Queries WordProposal()
         {
-            return new QueryBuilder(Type.POST,_path+NksRestAttributes.WordProp);
+            return new Queries(Type.POST,_path+NksRestAttributes.WordProp);
         }
     }
 }

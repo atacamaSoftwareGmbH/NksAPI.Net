@@ -20,6 +20,8 @@
 using Atacama.Apenio.NKS.API;
 using NksAPI.Atacama.Apenio.NKS.API.IO;
 using System;
+using NksAPI.Atacama.Apenio.NKS.API.Test.Access;
+using NksAPI.Atacama.Apenio.NKS.API.Workflow;
 
 namespace NksAPI.Atacama.Apenio.NKS.API
 {
@@ -56,7 +58,8 @@ namespace NksAPI.Atacama.Apenio.NKS.API
             //Nks.NewConnection().PrepareRequest().Access().Element();
             //Nks.NewConnection().PrepareRequest().Search().AdHocIntervention();
             //Nks.NewConnection().PrepareRequest().Access().Element();
-            new NksJson().Display(Nks.NewConnection("http://192.168.0.98:22080")?.PrepareRequest().Get().Interventions().CName("IA1312").Execute());
+            //new NksJson().Display(AccessTests.Access_002());
+            new NksJson().Display(AccessTests.Access_000_00_03());
             Console.In.ReadLine();
         }
 /*
