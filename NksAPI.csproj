@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{98EE6213-00AF-4058-956A-08BFE5C4416B}</ProjectGuid>
-    <OutputType>exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NksAPI</RootNamespace>
     <AssemblyName>NksAPI</AssemblyName>
