@@ -64,6 +64,18 @@ namespace Atacama.Apenio.NKS.API
         }
         
         /// <summary>
+        /// Füge Ordnungsstuktur der Interventionen der Zielmenge hinzu
+        /// 
+        /// </summary>
+        /// <returns>EntryBuilder um gegebenenfalls Strukturelemente dem Ziel hinzuzufügen</returns>
+        public SimpleEntryBuilder<SimpleTargetBuilder> InterventionsBundle()
+        {
+            NksEntry entry = new NksEntry(BasicEntries.InterventionsBundle);
+            _query.AddTarget(entry);
+            return new SimpleEntryBuilder<SimpleTargetBuilder>(entry,this);
+        }
+        
+        /// <summary>
         /// Füge Ausprägungen der Zielmenge hinzu
         /// 
         /// </summary>

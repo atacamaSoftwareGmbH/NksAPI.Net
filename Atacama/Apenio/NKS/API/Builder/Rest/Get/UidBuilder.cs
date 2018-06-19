@@ -13,7 +13,7 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Builder.Rest.Get
         /// </summary>
         public Executor Tree()
         {
-            return new Executor(Type.GET,Path + NksRestAttributes.tree);
+            return new Executor(Type.GET,GetPath() + NksRestAttributes.tree);
         }
         
         /// <summary>
@@ -21,7 +21,7 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Builder.Rest.Get
         /// </summary>
         public Executor List()
         {
-            return new Executor(Type.GET,Path + NksRestAttributes.list);
+            return new Executor(Type.GET,GetPath() + NksRestAttributes.list);
         }
     }
 }

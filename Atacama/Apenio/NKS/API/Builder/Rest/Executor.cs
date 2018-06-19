@@ -9,13 +9,13 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Builder.Rest
     {
         protected Type Type;
 
-        protected string Path;
+        private readonly string _path;
 
         protected NksQuery Query;
 
         internal Executor(Type type, string path)
         {
-            Path = path;
+            _path = path;
             Type = type;
         }
 
@@ -32,6 +32,11 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Builder.Rest
             return Query;
         }
 
+        public String GetPath()
+        {
+            return _path;
+        }
+
         /// <summary>
         /// Führe Anfrage an den Server durch
         /// </summary>
@@ -40,10 +45,10 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Builder.Rest
             switch (Type)
             {
               case Type.GET:
-                  return await RestClient.Instance.Get(Path);
+                  return await RestClient.Instance.Get(_path);
                   break;
               case Type.POST:
-                  return await RestClient.Instance.Post(Query,Path);
+                  return await RestClient.Instance.Post(Query,_path);
                   break;
               default:
                   //TODO: Throw Exception

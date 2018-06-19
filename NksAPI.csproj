@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{98EE6213-00AF-4058-956A-08BFE5C4416B}</ProjectGuid>
-    <OutputType>exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NksAPI</RootNamespace>
     <AssemblyName>NksAPI</AssemblyName>
@@ -85,6 +85,7 @@
     <Compile Include="Atacama\Apenio\NKS\API\Error\QueryException.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Model\NksResponse.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Test\Access\AccessTests.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Test\Apenio\Workflow.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Workflow\AssessmentExampleFlowTest.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Workflow\ExpertExampleFlowTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
