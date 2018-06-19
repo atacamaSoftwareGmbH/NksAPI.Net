@@ -15,5 +15,6 @@
         public const string BodyLocationsStructure = "KoerperStructure";
         public const string AppliancesStructure = "HilfsmittelStructure";
         public const string CausesStructure = "UrsachenStructure";
+        public const string InterventionsBundle = "InterventionBundleOrdner";
     }
 }

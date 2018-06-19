@@ -62,6 +62,9 @@ namespace Atacama.Apenio.NKS.API
 
         [JsonProperty()]
         internal int mode { get; set; }
+        
+        [JsonProperty()]
+        internal bool deprecated { get; set; }
 
         internal NksQuery() { }
 

@@ -73,7 +73,7 @@ namespace Atacama.Apenio.NKS.API
         public int Mode { set => Query.mode = value; }
         
         /// <summary>
-        /// Modus in dem Gesucht werden soll
+        /// Rückgabetyp
         /// </summary>
         public string Order { set => Query.order = value; }
 
@@ -91,6 +91,12 @@ namespace Atacama.Apenio.NKS.API
         public QueryBuilder SetLanguage(string str)
         {
             Language = str;
+            return this;
+        }
+        
+        public QueryBuilder GetDeprecatedElements()
+        {
+            Query.deprecated = true;
             return this;
         }
 

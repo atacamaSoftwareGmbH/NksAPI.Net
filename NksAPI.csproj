@@ -85,6 +85,7 @@
     <Compile Include="Atacama\Apenio\NKS\API\Error\QueryException.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Model\NksResponse.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Test\Access\AccessTests.cs" />
+    <Compile Include="Atacama\Apenio\NKS\API\Test\Apenio\Workflow.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Workflow\AssessmentExampleFlowTest.cs" />
     <Compile Include="Atacama\Apenio\NKS\API\Workflow\ExpertExampleFlowTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

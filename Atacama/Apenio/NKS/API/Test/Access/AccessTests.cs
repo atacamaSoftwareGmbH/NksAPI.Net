@@ -1,4 +1,5 @@
-﻿using System.Runtime.Remoting.Channels;
+﻿using System;
+using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Messaging;
 using System.Threading.Tasks;
 using Atacama.Apenio.NKS.API;
@@ -28,6 +29,8 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Test.Access
                 .AddTargets().Interventions().Done().Done()
                 .AddConcept(BasicEntries.InterventionsStructure).Done()
                 .SetOrder().List();
+            Console.Out.WriteLine(builder.GetPath());
+            new NksJson().Display(builder.GetQuery());
             return await builder.Execute();
         }
 
@@ -36,9 +39,14 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Test.Access
         {
             SimpleQueryBuilder builder = Nks.NewConnection(Server).PrepareRequest().Access().Element()
                 .CreateSimpleQuery()
-                .AddTargets().Interventions().Done().Done()
+                .AddTargets()
+                .Interventions().Done()
+                .InterventionsStructure().Done()
+                .Done()
                 .AddConcept(BasicEntries.InterventionsStructure).Done()
                 .SetOrder().Tree();
+            Console.Out.WriteLine(builder.GetPath());
+            new NksJson().Display(builder.GetQuery());
             return await builder.Execute();
         }
 
@@ -49,6 +57,17 @@ namespace NksAPI.Atacama.Apenio.NKS.API.Test.Access
                 .CreateSimpleQuery()
                 .AddTargets().Phenomenons().Done().Done()
                 .AddConcept(BasicEntries.Phaenomenoms).Done()
+                .SetOrder().Tree();
+            return await builder.Execute();
+        }
+        
+        //ACC000_00_03
+        public static async Task<NksResponse> Access_000_00_04()
+        {
+            SimpleQueryBuilder builder = Nks.NewConnection(Server).PrepareRequest().Access().Element()
+                .CreateSimpleQuery()
+                .AddTargets().Shapes().Done().Done()
+                //.AddConcept(BasicEntries.Phaenomenoms).Done()
                 .SetOrder().Tree();
             return await builder.Execute();
         }

@@ -43,8 +43,6 @@ namespace Atacama.Apenio.NKS.API
         public RestRequestBuilder PrepareRequest()
         {
             return new RestRequestBuilder(this.path);
-        }
-
-        
+        }        
     }
 }

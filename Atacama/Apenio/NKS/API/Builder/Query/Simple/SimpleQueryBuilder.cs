@@ -153,5 +153,11 @@ namespace Atacama.Apenio.NKS.API
         {
             return new OrderBuilder(Query,this);
         }
+        
+        public SimpleQueryBuilder GetDeprecatedElements()
+        {
+            Query.deprecated = true;
+            return this;
+        }
     }
 }

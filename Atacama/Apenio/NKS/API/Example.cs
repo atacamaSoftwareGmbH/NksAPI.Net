@@ -58,8 +58,10 @@ namespace NksAPI.Atacama.Apenio.NKS.API
             //Nks.NewConnection().PrepareRequest().Access().Element();
             //Nks.NewConnection().PrepareRequest().Search().AdHocIntervention();
             //Nks.NewConnection().PrepareRequest().Access().Element();
-            //new NksJson().Display(AccessTests.Access_002());
-            new NksJson().Display(AccessTests.Access_000_00_03());
+            //new NksJson().Display(AccessTests.Access_000_00_02());
+            new NksJson().Display(Test.Apenio.Workflow.ACC_000_03());
+
+            //Test.Apenio.Workflow.ACC_000_05();
             Console.In.ReadLine();
         }
 /*
